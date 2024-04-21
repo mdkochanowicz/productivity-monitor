@@ -1,7 +1,8 @@
 using System.ComponentModel.DataAnnotations.Schema;
+using ActivitiesService.Entities;
 
-namespace ActivitiesService.Entities
-{
+namespace ActivitiesService;
+
     
     [Table("Tasks")]
     public class Task
@@ -19,4 +20,3 @@ namespace ActivitiesService.Entities
         public Guid ActivityId {get; set;}
 
     }
-}

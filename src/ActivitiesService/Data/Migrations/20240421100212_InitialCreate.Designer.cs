@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ActivitiesService.Data.Migrations
 {
     [DbContext(typeof(ActivityDBContext))]
-    [Migration("20240420194009_InitialCreate")]
+    [Migration("20240421100212_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -50,6 +50,9 @@ namespace ActivitiesService.Data.Migrations
                     b.Property<int>("ReserveTime")
                         .HasColumnType("integer");
 
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
@@ -60,6 +63,62 @@ namespace ActivitiesService.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Activities");
+                });
+
+            modelBuilder.Entity("ActivitiesService.Task", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ActivityId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Experience")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int?>("PredictedTime")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ActivityId")
+                        .IsUnique();
+
+                    b.ToTable("Tasks");
+                });
+
+            modelBuilder.Entity("ActivitiesService.Task", b =>
+                {
+                    b.HasOne("ActivitiesService.Entities.Activity", "Activity")
+                        .WithOne("Task")
+                        .HasForeignKey("ActivitiesService.Task", "ActivityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Activity");
+                });
+
+            modelBuilder.Entity("ActivitiesService.Entities.Activity", b =>
+                {
+                    b.Navigation("Task")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

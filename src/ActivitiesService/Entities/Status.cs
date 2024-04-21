@@ -1,5 +1,5 @@
-namespace ActivitiesService.Entities
-{
+namespace ActivitiesService.Entities;
+
     public enum Status
     {
         Pending,
@@ -7,4 +7,3 @@ namespace ActivitiesService.Entities
         Completed
 
     }
-}

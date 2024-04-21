@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Server.HttpSys;
+
 namespace ActivitiesService.Entities;
 
 public class Activity
@@ -11,6 +13,7 @@ public class Activity
     public DateTime CreatedAt {get; set;} = DateTime.Now;
     public DateTime? UpdatedAt {get; set;} = DateTime.Now;
     public DateTime? ActivityEnd {get; set;}
-    //public Status Status {get; set;} = Status.Pending; 
-    //public Item Item {get; set;}
+    public Status Status {get; set;} 
+    public Task Task {get; set;}
+
 }
