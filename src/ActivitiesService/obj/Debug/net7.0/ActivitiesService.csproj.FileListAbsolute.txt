@@ -31,3 +31,15 @@ C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesServ
 C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\obj\Debug\net7.0\ActivitiesService.pdb
 C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\obj\Debug\net7.0\ActivitiesService.genruntimeconfig.cache
 C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\obj\Debug\net7.0\ref\ActivitiesService.dll
+C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\Humanizer.dll
+C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\Npgsql.dll
+C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\System.CodeDom.dll
