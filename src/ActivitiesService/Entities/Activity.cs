@@ -10,8 +10,8 @@ public class Activity
     public string User {get; set;}
     public int? ExecutionTime {get; set;}
     public int? HighestTime {get; set;}
-    public DateTime CreatedAt {get; set;} = DateTime.Now;
-    public DateTime? UpdatedAt {get; set;} = DateTime.Now;
+    public DateTime CreatedAt {get; set;} = DateTime.UtcNow;
+    public DateTime? UpdatedAt {get; set;} = DateTime.UtcNow;
     public DateTime? ActivityEnd {get; set;}
     public Status Status {get; set;} 
     public Task Task {get; set;}
