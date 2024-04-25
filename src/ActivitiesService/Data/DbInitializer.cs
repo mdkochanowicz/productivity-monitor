@@ -30,32 +30,38 @@ public class DbInitializer
             {
                 Id = Guid.Parse("f5b1b3b3-0b6b-4b1b-8b3b-0b6b4b1b8b3b"),
                 Status = Status.InProgress,
-                //ReserveTime = 50,
+                ReserveTime = 50,
                 Author = "Michal",
                 User = "Michal",
-                //ActivityEnd = DateTime.UtcNow.AddHours(1),
+                ActivityEnd = DateTime.UtcNow.AddHours(1),
                 Task = new Task
                 {
-                    Id = Guid.Parse("f5b1b3b3-0b6b-4b1b-8b3b-0b6b4b1b8b3b"),
                     Name = "Task 1",
                     Description = "Task 1 Description",
+                    PredictedTime = 50,
+                    Category = "Category 1",
+                    Experience = 1,
+                    ImageUrl = "https://www.google.com"
                 }
             },
             new Activity
             {
                 Id = Guid.Parse("f5b1b3b3-0b6b-4b1b-8b3b-0b6b4b1b8b3c"),
                 Status = Status.InProgress,
-                //ReserveTime = 50,
-                Author = "Dariusz",
-                User = "Dariusz",
-                //ActivityEnd = DateTime.UtcNow.AddHours(1),
+                ReserveTime = 50,
+                Author = "MichalD",
+                User = "MichalD",
+                ActivityEnd = DateTime.UtcNow.AddHours(1),
                 Task = new Task
                 {
-                    Id = Guid.Parse("f5b1b3b3-0b6b-4b1b-8b3b-0b6b4b1b8b3c"),
                     Name = "Task 2",
                     Description = "Task 2 Description",
+                    PredictedTime = 50,
+                    Category = "Category 2",
+                    Experience = 1,
+                    ImageUrl = "https://www.google.com"
                 }
-            },
+            }
         };
 
         context.AddRange(activities);
