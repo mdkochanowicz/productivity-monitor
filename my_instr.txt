@@ -1,0 +1,7 @@
+update database activities
+cd ActivitiesService
+ dotnet ef database drop
+  dotnet watch
+
+  //copilot
+  CTRL + I 
