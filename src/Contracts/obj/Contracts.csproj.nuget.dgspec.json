@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Michal\\Documents\\STUDIES\\zti\\productivity-monitor-v2\\src\\SearchService\\SearchService.csproj": {}
+    "C:\\Users\\Michal\\Documents\\STUDIES\\zti\\productivity-monitor-v2\\src\\Contracts\\Contracts.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Michal\\Documents\\STUDIES\\zti\\productivity-monitor-v2\\src\\SearchService\\SearchService.csproj": {
+    "C:\\Users\\Michal\\Documents\\STUDIES\\zti\\productivity-monitor-v2\\src\\Contracts\\Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Michal\\Documents\\STUDIES\\zti\\productivity-monitor-v2\\src\\SearchService\\SearchService.csproj",
-        "projectName": "SearchService",
-        "projectPath": "C:\\Users\\Michal\\Documents\\STUDIES\\zti\\productivity-monitor-v2\\src\\SearchService\\SearchService.csproj",
+        "projectUniqueName": "C:\\Users\\Michal\\Documents\\STUDIES\\zti\\productivity-monitor-v2\\src\\Contracts\\Contracts.csproj",
+        "projectName": "Contracts",
+        "projectPath": "C:\\Users\\Michal\\Documents\\STUDIES\\zti\\productivity-monitor-v2\\src\\Contracts\\Contracts.csproj",
         "packagesPath": "C:\\Users\\Michal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Michal\\Documents\\STUDIES\\zti\\productivity-monitor-v2\\src\\SearchService\\obj\\",
+        "outputPath": "C:\\Users\\Michal\\Documents\\STUDIES\\zti\\productivity-monitor-v2\\src\\Contracts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Michal\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,24 +39,6 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "dependencies": {
-            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
-              "target": "Package",
-              "version": "[12.0.1, )"
-            },
-            "MassTransit.RabbitMQ": {
-              "target": "Package",
-              "version": "[8.0.16, )"
-            },
-            "Microsoft.Extensions.Http.Polly": {
-              "target": "Package",
-              "version": "[7.0.8, )"
-            },
-            "MongoDB.Entities": {
-              "target": "Package",
-              "version": "[22.0.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -69,9 +51,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
