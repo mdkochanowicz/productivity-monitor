@@ -770,6 +770,16 @@
         "runtime": {
           "lib/net6.0/ZstdSharp.dll": {}
         }
+      },
+      "Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Contracts.dll": {}
+        }
       }
     }
   },
@@ -2068,11 +2078,17 @@
         "zstdsharp.port.0.6.2.nupkg.sha512",
         "zstdsharp.port.nuspec"
       ]
+    },
+    "Contracts/1.0.0": {
+      "type": "project",
+      "path": "../Contracts/Contracts.csproj",
+      "msbuildProject": "../Contracts/Contracts.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
+      "Contracts >= 1.0.0",
       "MassTransit.RabbitMQ >= 8.0.16",
       "Microsoft.Extensions.Http.Polly >= 7.0.8",
       "MongoDB.Entities >= 22.0.0"
@@ -2084,11 +2100,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Michal\\Documents\\STUDIES\\zti\\productivity-monitor-v2\\src\\SearchService\\SearchService.csproj",
+      "projectUniqueName": "C:\\Users\\Michal\\Documents\\STUDIES\\zti\\productivity-monitor-v2\\src\\SearchService\\SearchService.csproj",
       "projectName": "SearchService",
-      "projectPath": "c:\\Users\\Michal\\Documents\\STUDIES\\zti\\productivity-monitor-v2\\src\\SearchService\\SearchService.csproj",
+      "projectPath": "C:\\Users\\Michal\\Documents\\STUDIES\\zti\\productivity-monitor-v2\\src\\SearchService\\SearchService.csproj",
       "packagesPath": "C:\\Users\\Michal\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Michal\\Documents\\STUDIES\\zti\\productivity-monitor-v2\\src\\SearchService\\obj\\",
+      "outputPath": "C:\\Users\\Michal\\Documents\\STUDIES\\zti\\productivity-monitor-v2\\src\\SearchService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Michal\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2104,7 +2120,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Michal\\Documents\\STUDIES\\zti\\productivity-monitor-v2\\src\\Contracts\\Contracts.csproj": {
+              "projectPath": "C:\\Users\\Michal\\Documents\\STUDIES\\zti\\productivity-monitor-v2\\src\\Contracts\\Contracts.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
