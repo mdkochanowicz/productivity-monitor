@@ -2,6 +2,7 @@ using ActivitiesService.Data;
 using ActivitiesService.DTOs;
 using ActivitiesService.Entities;
 using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,14 +21,18 @@ public class ActivitiesController : ControllerBase
         _mapper = mapper;
     }
     [HttpGet]
-    public async Task<ActionResult<List<ActivityDto>>> GetAllActivities()
+    public async Task<ActionResult<List<ActivityDto>>> GetAllActivities(string date)
     {
-        var activities = await _context.Activities
-        .Include(x => x.Task)
-        .OrderBy(x => x.Task.Name)
-        .ToListAsync();
+        var query = _context.Activities.OrderBy(x=>x.Task.Name).AsQueryable();
 
-        return _mapper.Map<List<ActivityDto>>(activities);
+        if(!string.IsNullOrEmpty(date))
+        {
+            query = query.Where(x => DateTime.Compare((DateTime)x.UpdatedAt, DateTime.Parse(date).ToUniversalTime()) > 0);
+            //tam wyzej cos pomieszane
+            //powinny byc query = query.Where(x => x.UpdatedAt.CompareTo(DateTime.Parse(date).ToUniversalTime()) > 0);
+        }
+
+        return await query.ProjectTo<ActivityDto>(_mapper.ConfigurationProvider).ToListAsync();
     }
     
     [HttpGet("{id}")]

@@ -1,6 +1,8 @@
 using System.Net;
 using MongoDB.Driver;
 using MongoDB.Entities;
+using Polly;
+using Polly.Extensions.Http;
 using SearchService;
 //using MongoDB.Entities.Core; // Add this line
 
@@ -9,21 +11,32 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-
+builder.Services.AddHttpClient<ActivitySvcHttpClient>().AddPolicyHandler(GetPolicy());
 
 var app = builder.Build();
-
 
 app.UseAuthorization();
 
 app.MapControllers();
 
-await DB.InitAsync("searchDb", MongoClientSettings.FromConnectionString(builder.Configuration.GetConnectionString("MongoDbConnection")));
+app.Lifetime.ApplicationStarted.Register(async () =>
+{
+try 
+{
+    await DbInitializer.InitDb(app);
+}
+catch(Exception e)
+{
+    Console.WriteLine(e);
+}
+});
 
-await DB.Index<Item>()
-    .Key(t => t.Name, KeyType.Text)
-    .Key(t => t.Description, KeyType.Text)
-    .Key(t => t.Category, KeyType.Text)
-    .CreateAsync();
+
 
 app.Run();
+
+static IAsyncPolicy<HttpResponseMessage> GetPolicy()
+    => HttpPolicyExtensions
+        .HandleTransientHttpError()
+        .OrResult(msg => msg.StatusCode == HttpStatusCode.NotFound)
+        .WaitAndRetryForeverAsync(_ => TimeSpan.FromSeconds(3));
