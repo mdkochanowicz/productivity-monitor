@@ -15,6 +15,15 @@ builder.Services.AddDbContext<ActivityDBContext>(opt =>
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddMassTransit(x =>
 {
+    x.AddEntityFrameworkOutbox<ActivityDBContext>(o =>
+    {
+        o.QueryDelay = TimeSpan.FromSeconds(10);
+
+        o.UsePostgres();
+        o.UseBusOutbox();
+    });
+    
+    
     x.UsingRabbitMq((context, cfg) =>
     {
         cfg.ConfigureEndpoints(context);

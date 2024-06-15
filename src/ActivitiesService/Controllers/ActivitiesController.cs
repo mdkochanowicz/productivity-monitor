@@ -3,6 +3,8 @@ using ActivitiesService.DTOs;
 using ActivitiesService.Entities;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using Contracts;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,11 +16,13 @@ public class ActivitiesController : ControllerBase
 {
     private readonly ActivityDBContext _context;
     private readonly IMapper _mapper;
+    private IPublishEndpoint _publishEndpoint;
 
-    public ActivitiesController(ActivityDBContext context, IMapper mapper)
+    public ActivitiesController(ActivityDBContext context, IMapper mapper, IPublishEndpoint publishEndpoint)
     {
         _context = context;
         _mapper = mapper;
+        _publishEndpoint = publishEndpoint;
     }
     [HttpGet]
     public async Task<ActionResult<List<ActivityDto>>> GetAllActivities(string date)
@@ -61,12 +65,16 @@ public class ActivitiesController : ControllerBase
 
         var result = await _context.SaveChangesAsync() > 0;
 
+        var newActivity = _mapper.Map<ActivityDto>(activity);
+
+        await _publishEndpoint.Publish(_mapper.Map<ActivityCreated>(newActivity));
+
         if (!result)
         {
             return BadRequest("Could not save changes to the database");
         }
 
-        return CreatedAtAction(nameof(GetActivityById), new {activity.Id }, _mapper.Map<ActivityDto>(activity));
+        return CreatedAtAction(nameof(GetActivityById), new {activity.Id }, newActivity);
     }
 
     [HttpPut("{id}")]

@@ -1,4 +1,5 @@
 using ActivitiesService.Entities;
+using MassTransit;
 using Microsoft.EntityFrameworkCore;
 
 namespace ActivitiesService.Data;
@@ -11,5 +12,15 @@ namespace ActivitiesService.Data;
 
         public DbSet<Activity> Activities { get; set; }
 
-       
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.AddInboxStateEntity();
+        modelBuilder.AddOutboxMessageEntity();
+        modelBuilder.AddOutboxStateEntity();
     }
+
+
+
+}

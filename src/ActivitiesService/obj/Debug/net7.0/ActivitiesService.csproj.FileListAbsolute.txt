@@ -43,3 +43,10 @@ C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesServ
 C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\Npgsql.dll
 C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\MassTransit.dll
+C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\MassTransit.Abstractions.dll
+C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\MassTransit.RabbitMqTransport.dll
+C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\RabbitMQ.Client.dll
+C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\Contracts.dll
+C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\Contracts.pdb
+C:\Users\Michal\Documents\STUDIES\zti\productivity-monitor-v2\src\ActivitiesService\bin\Debug\net7.0\MassTransit.EntityFrameworkCoreIntegration.dll
