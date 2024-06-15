@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 
 namespace Contracts;
 
-public class AuctionUpdated
+public class ActivityUpdated
 {
         public string Id {get; set;}
         public string Name {get; set;}
