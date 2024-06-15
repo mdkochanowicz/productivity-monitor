@@ -24,7 +24,7 @@ builder.Services.AddMassTransit(x =>
         o.UseBusOutbox();
     });
     
-   x.AddConsumersFromNamespaceContaining<ActivityCreatedFaultConsumer>();
+   //x.AddConsumersFromNamespaceContaining<ActivityCreatedFaultConsumer>();
 
    x.SetEndpointNameFormatter(new KebabCaseEndpointNameFormatter("search", false));
     
