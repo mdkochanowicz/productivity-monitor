@@ -15,5 +15,7 @@ public class MappingProfiles : Profile
             .ForMember(d => d.Task, o => o.MapFrom(s => s));
         CreateMap<CreateActivityDto, Task>();
         CreateMap<ActivityDto, ActivityCreated>();
+        CreateMap<Activity, ActivityUpdated>().IncludeMembers(a => a.Task);
+        CreateMap<Task, ActivityUpdated>();
     }
 }

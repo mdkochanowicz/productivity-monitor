@@ -93,6 +93,8 @@ public class ActivitiesController : ControllerBase
         activity.Task.Category = updateActivityDto.Category ?? activity.Task.Category;
         activity.Task.Experience = updateActivityDto.Experience ?? activity.Task.Experience;
 
+        await _publishEndpoint.Publish(_mapper.Map<ActivityUpdated>(activity)); //activity updated zrob cos
+        
         var result = await _context.SaveChangesAsync() > 0;
 
         if (!result)
@@ -115,6 +117,8 @@ public class ActivitiesController : ControllerBase
         }
 
         _context.Activities.Remove(activity);
+
+        await _publishEndpoint.Publish<ActivityDeleted>(new { Id = activity.Id.ToString() });
 
         var result = await _context.SaveChangesAsync() > 0;
 

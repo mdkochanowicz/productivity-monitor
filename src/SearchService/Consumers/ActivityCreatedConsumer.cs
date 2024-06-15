@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using Amazon.Runtime.Internal.Transform;
 using AutoMapper;
 using Contracts;
 using MassTransit;
@@ -19,6 +20,11 @@ public class ActivityCreatedConsumer : IConsumer<ActivityCreated>
         Console.WriteLine($"Processing activity: {context.Message.Id}");
 
         var item = _mapper.Map<Item>(context.Message);
+
+        if (item.Name == "Bad")
+        {
+            throw new ArgumentException("you cannot have a bad item/task");
+        }
 
         await item.SaveAsync();
     }

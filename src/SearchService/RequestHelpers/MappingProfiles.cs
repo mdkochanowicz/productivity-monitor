@@ -8,6 +8,7 @@ public class MappingProfiles : Profile
     public MappingProfiles()
     {
         CreateMap<ActivityCreated, Item>();
+        CreateMap<ActivityUpdated, Item>();
         /*
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
             .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))

@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+using ActivitiesService;
 using ActivitiesService.Data;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,10 @@ builder.Services.AddMassTransit(x =>
         o.UsePostgres();
         o.UseBusOutbox();
     });
+    
+   x.AddConsumersFromNamespaceContaining<ActivityCreatedFaultConsumer>();
+
+   x.SetEndpointNameFormatter(new KebabCaseEndpointNameFormatter("search", false));
     
     
     x.UsingRabbitMq((context, cfg) =>
