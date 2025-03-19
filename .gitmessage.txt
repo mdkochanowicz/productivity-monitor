@@ -1,0 +1,19 @@
+# Commit message (Conventional Commits format)
+#
+# type(scope): short description
+#
+# [Opcjonalnie] Pusta linia, a potem dokładniejszy opis commit'a:
+# - Co dokładnie zostało zmienione?
+# - Dlaczego?
+# - Dodatkowe informacje, linki do tasków, ticketów, itp.
+#
+# Typy commitów:
+# feat:      Nowa funkcjonalność
+# fix:       Poprawka błędu
+# docs:      Zmiany w dokumentacji
+# style:     Formatowanie, brak zmian w kodzie
+# refactor:  Refaktoryzacja bez zmiany działania
+# test:      Dodanie/podmiana testów
+# chore:     Rzeczy pomocnicze (np. zmiany w zależnościach, konfiguracji)
+# ci:        Zmiany w CI/CD
+# build:     Zmiany w build tools, np. Docker, Webpack
