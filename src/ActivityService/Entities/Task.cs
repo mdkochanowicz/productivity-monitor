@@ -1,5 +1,9 @@
-namespace ActivityService.Entities
-{
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ActivityService.Entities;
+
+    [Table("Tasks")]
+    
     public class Task
     {
         public Guid Id {get; set;}
@@ -14,4 +18,3 @@ namespace ActivityService.Entities
         public Activity Activity {get; set;}
         public Guid ActivityId {get; set;}
     }
-}

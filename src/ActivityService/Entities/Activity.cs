@@ -1,5 +1,5 @@
 namespace ActivityService.Entities;
-{
+
     public class Activity
     {
     public Guid Id {get; set;}
@@ -14,4 +14,3 @@ namespace ActivityService.Entities;
     public Status Status {get; set;} 
     public Task Task {get; set;}
     }
-}
